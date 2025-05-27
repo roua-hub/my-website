@@ -1,0 +1,621 @@
+*{
+    font-family: 'Cairo', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    direction: rtl;
+}
+body {
+  background-color: #d6d4d4;
+}
+header  {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(32, 32, 32, 0.85); /* لون داكن شبه شفاف */
+  align-items: center;
+  height: 100px;
+  padding: 0 40px; /* مسافة داخلية يمين ويسار */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* ظل خفيف لإبراز الهيدر */
+  border-bottom: 2px solid #dbc678;
+  backdrop-filter: blur(6px); /* تأثير بلور أنيق */
+  /* جعل الهيدر ثابت مع تصفح الموقع*/
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+nav a {
+  text-decoration: none;
+  margin: 0 20px;
+  color: #dbc678;
+  font-size: 18px;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+nav a::after { /* إظهار خط اسفل الرابط */
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: #dbc678;
+  left: 0;
+  bottom: -4px; /*وضع تحت العنصر بمقدار 4 px */
+  transition: width 0.3s ease; /*عند حدوث حركة ما يتغير العرض */
+}
+nav a:hover {
+  color: #00bfa6;
+}
+nav a:hover::after {
+  width: 100%; /* عند هوفر يتأثر العنصر المزيف ويتغير العرض */
+}
+.money {
+  padding: 2px;
+}
+.money button {
+  background-color:#dbc678 !important;
+  padding: 10px;
+  border: none ;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* بدل margin-left */
+  color: #dbc678;
+  font-size: 22px;
+}
+.main-logo {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: white; /* خلفية واضحة للشعار */
+  padding: 5px;
+  object-fit: contain;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+/* introduction section */
+.intro {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-size: cover;
+      background-position: top;
+      background-repeat: no-repeat;
+      position: relative;
+      transition: background-image 1.5s ease-in-out;
+      text-align: center;
+      padding: 20px;
+    }
+.intro::before { /* إنشاء عنصر وكانه قبل العنص intro */
+      content: ""; /* هذه الخاصية ضرورية عند التعامل مع pesude element  */
+      position: absolute; /* موضع هذا العنصر عائد للعنصر الاب */
+      top: 0; left: 0; right: 0; bottom: 0;/* سيغطي هذا العنصر كامل العنصر الأب */
+      background: rgba(0,0,0,0.5);/* عمل خلفية سوداء بشفافية 50% */
+      z-index: 0; /* العنصر الجديد خلف العنصر الاب */
+    }
+    .intro-info {
+      position: relative;
+      z-index: 1;
+      margin-top: 100px;
+      max-width: 600px;
+    }
+    
+    .intro-info h1 {
+      font-size: 30px;
+      margin-top: 1.2em;
+      font-weight: 600;
+      color: white;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+    }
+    .intro-info h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1.2em;
+      font-weight: 600;
+      color: white;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+    }
+    .intro-info a {
+      display: inline-block;
+      background: #ff5722;
+      color: white;
+      padding: 15px 40px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.2rem;
+      border-radius: 50px;
+      box-shadow: 0 4px 15px rgba(255,87,34,0.5);
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    .intro-info a:hover {
+      background-color: #e64a19;
+      transform: scale(1.05);
+    }
+
+
+/* end of introduction section */
+.welcome{
+  padding: 40px;
+  text-align: center;
+  color: #8b7937;;
+  
+}
+/* about us section */
+.aboutUs {
+    display: flex; /* استخدام flexbox */
+    flex-wrap: wrap; /* يسمح بتغليف العناصر عند الحاجة */
+    justify-content: space-between; /* توزيع المساحة بين العناصر */
+    align-items: flex-start; /* محاذاة العناصر في الأعلى */
+    margin: 20px; /* إضافة مسافة خارجية */
+    margin-top: 5px;
+    padding: 0px 10px;
+    gap: 30px;
+}
+ .aboutUs p , .voluntry p {
+  text-align: center ;
+  font-style: italic;
+  font-weight: bold ;
+  line-height: 2.1;
+  
+}
+/* Statistics information */
+.Statistics {
+  padding: 20px;
+  background-image:url('/imges/5437683.jpg') ;
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  text-align: center;
+  height: 330px;
+  min-height: 150px;
+  color: black;
+  position: relative;
+  align-content: center;
+}
+.Statistics::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0 0 30px rgba(215, 228, 44, 0.5);
+  background: rgba(53, 52, 5, 0.5);
+  z-index: 1;
+}
+.Statistics h2 {
+  margin: 10px;
+  font-style: italic !important;
+  font-weight: bold !important;;  
+  font-size: 32px !important;; 
+  text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3), 0 0 25px rgba(182, 33, 40, 0.5);
+  animation: colorChange 30s infinite;
+}
+.Statistics .Statistics-info {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 30px;
+  margin-top: 30px;
+  text-shadow: 10px 10px 10px rgba(206, 56, 18, 0.3), 0 0 25px rgba(223, 192, 16, 0.5);
+  font-size: 16px; 
+}
+.Statistics-info .subDiv h3{
+  font-size: 24px;
+  font-family: inherit;
+  font-weight: bold;
+}
+
+/* courses information */
+.courses , .teacher {
+  padding: 20px 10px;
+  max-width: 1500px;
+  margin: 0 auto;
+  margin-top: 30px;
+  direction: rtl; /* لضبط الاتجاه من اليمين إلى اليسار */
+  
+}
+
+.courses h2 {
+  color: #37115e;  
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 3em;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));/* تكرار الاعمدة حسب عرض لبشاشة */
+  gap: 20px;
+  align-items: stretch; /* مهم لتساوي ارتفاع الأعمدة */
+
+}
+.content .content-edu {
+ background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+.content-edu:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+/* تأثير داخلي على الصورة */
+.image-edu img {
+  transition: transform 0.4s ease;
+}
+.content-edu:hover .image-edu img {
+  transform: scale(1.05) rotate(0.3deg);
+}
+
+/* تأثير لمعان خفيف */
+.content-edu::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-20deg);
+  transition: left 0.6s ease;
+  pointer-events: none;
+}
+.content-edu:hover::after {
+  left: 125%;
+}
+.image-edu {
+  height: 200px; /* ارتفاع ثابت للصور */
+  overflow: hidden;
+}
+
+.image-edu img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.content-edu h4 {
+  font-size: 1.2rem;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+}
+
+.content-edu p {
+  font-size: 0.95rem;
+  margin: 0 15px 15px;
+  color: #555;
+  text-align: center;
+}
+.card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/*  end of courses information */
+/* ......................................................................... */
+/* css for voluntry section */
+.voluntry{
+  background-color: #e0dac1;
+  margin: 10px 0px;
+  margin-top: 50px;
+  padding: 2px;
+  text-align: center;
+}
+.voluntry h2 {
+  margin: 20px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-weight: bold;
+  font-size: 2em;
+  color: #4a7224;
+}
+.voluntry span {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-weight: bold;
+  color: #4a7224;
+
+}
+.voluntry-type {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: stretch;
+  flex-wrap: wrap;
+  
+}
+.voluntry-type .type {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  padding: 5px;
+  width: 90%; /* زاد عرض البطاقة */
+  max-width: 400px; /* زيادة الحد الأقصى للعرض */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin: 10px; /* إضافة فراغ بسيط بين البطاقات */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* يجعل الزر يذهب للأسفل */
+  /* يجعل البطاقات بنفس الارتفاع */
+  height: 100%;
+  flex: 1 1 300px; /* يجعلها تتمدد بشكل متساوي */
+}
+.type .type-image  {
+  height: 250px; /* زيادة ارتفاع الحاوية */
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.type-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* لتعبئة الحاوية بالكامل بنفس الأبعاد */
+  display: block;
+  border-radius: 8px;
+}
+.type p{
+margin-top: 20px;
+}
+.type button {
+  background-color:#dbc678;
+  color: black;
+  font-weight: bold;
+  border: none;
+  padding: 15px 0; /* زيادة الارتفاع عموديًا */
+  font-size: 1.1rem; /* تكبير النص قليلًا */
+  height: 50px; /* أو استخدم ارتفاعًا ثابتًا */
+}
+
+/* end css for voluntry section */
+/* تنسيق قطاع قصص الطلاب */
+.inspiring-stories {
+  margin: 50px 0;
+  text-align: center;
+}
+
+.inspiring-stories h2 {
+  font-size: 2em;
+  color: black;
+  margin-bottom: 20px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.story-strip {
+  display: flex;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  direction: rtl; /* للعربية */
+}
+
+.story-img {
+  flex: 1;
+  transition: flex 0.5s ease;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.story-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.story-img:hover {
+  flex: 3 1 0; /* توسع الصورة عند التمرير */
+}
+.inspiring-stories button{
+  margin-top: 20px;
+  background-color:  #dbc678;
+  border: none;
+  color: black;
+  font-weight: bold;
+  height: auto;
+  text-align: center;
+  padding: 15px 15px; /* زيادة الارتفاع عموديًا */
+  height: 50px; /* أو استخدم ارتفاعًا ثابتًا */
+}
+/* نهاية تنسيق قطاع القصص */
+/* footer section */ 
+.footer {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(32, 32, 32, 0.85); /* لون داكن شبه شفاف */
+  align-items: center;
+  height: 400px;
+  padding: 0 20px; /* مسافة داخلية يمين ويسار */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* ظل خفيف لإبراز الهيدر */
+  border-bottom: 2px solid #dbc678;
+  backdrop-filter: blur(6px); /* تأثير بلور أنيق */
+  margin-top: 40px;
+}
+
+.footer-info .about-info a{
+  display: block; /* أو استخدم flexbox كما هو موضح أعلاه */
+  margin-top: 20px ;
+  text-decoration: none;
+  color: white;
+}
+.footer-info .about-info a:hover {
+  color:#dbc678; ;
+}
+
+.surf h1 , .more-info h1 {
+  color: #dbc678;
+  font-size: 24px;
+}
+.followUs {
+  height: 90% ;
+  margin-top: px;
+  border: #dbc678 solid;
+  border-left: none;
+  border-top-right-radius: 20%;
+  border-bottom-right-radius: 20%;
+  width: 500px;
+  display: block;
+
+}
+.followUs h4 {
+  margin: 30px;
+  color: #dbc678 ;
+  font-size: 24px;
+}
+.icons-social {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+
+}
+.icons-social .icon-social {
+  width: 80px;
+  height: 80px;
+  background-color: #333;
+  padding: 10px;
+  text-align: center;
+  font-size: 30px;
+  color: white;
+  margin-right: 10px;
+}
+.icons-social .icon-social:hover {
+  color:  #dbc678;
+  border: solid;
+  border-radius: 50%;
+}
+.followUs .learn {
+  margin: 20px;
+}
+.followUs .learn h2 {
+   color: #dbc678
+}
+.followUs .learn h3{
+  color: white;
+
+}
+/* تنسيق صفحة من نحن */
+/* تنسيق  الصورة */
+.who-image {
+  background-image: url('/imges/istockphoto-2161421780-1024x1024.jpg');
+  height: 400px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  padding: 0px 20px;
+  margin: 0px 30px;
+}
+/* تنسيق  النصوص المعبرة عن وصف المبادرة */
+.about-info {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;  
+  justify-content: right;
+}
+.about-info .info1 {
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px 0;
+  font-family: "Tahoma", sans-serif;
+  line-height: 1.8;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.about-info  h1{
+  margin-bottom: 20px;
+  color: #8b7937;
+  font-size: 26px;
+}
+.info1 h3 {
+  color: #2a4d69;
+  font-size: 22px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  padding-bottom: 5px;
+}
+hr {
+  height: 5px; /* زيادة الثخن */
+  background-color: #333; /* لون الخط */
+  border: none; /* إزالة الحدود الافتراضية */
+}
+.info1 ul{
+  list-style-type: disc;
+  padding-right: 20px;
+}
+.info1 li {
+  margin-right: 20px;
+  margin-bottom: 12px;
+}
+/*  تغيير لون الخط بشكل مستمر في جملة انطلاقة مبادرة نور العلم */
+@keyframes colorChange {
+    0% {
+        color: red; /* اللون في البداية */
+    }
+    25% {
+        color: orange; /* اللون بعد 25% */
+    }
+    50% {
+        color:blueviolet ; /* اللون بعد 50% */
+    }
+    75% {
+        color: green; /* اللون بعد 75% */
+    }
+    100% {
+        color: blue; /* اللون في النهاية */
+    }
+}
+/*  استجابة الفوتر و الهيدر */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+    gap: 20px;
+    text-align: center;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  nav a {
+    margin: 5px 10px;
+    font-size: 16px;
+  }
+
+  .footer {
+    flex-direction: column;
+    height: auto;
+    gap: 30px;
+    text-align: center;
+    padding: 30px 20px;
+  }
+
+  .footer-info, .followUs {
+    width: 100%;
+  }
+
+  .icons-social {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .icon-social {
+    margin: 10px;
+  }
+}
