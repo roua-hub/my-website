@@ -77,8 +77,8 @@ nav a:hover::after {
   object-fit: contain;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
 }
-/* introduction section */
-.intro {
+/* introduction section  */
+.intro , .intro-withus{  /* .intro-withus is for withus page  */
       height: 100vh;
       display: flex;
       justify-content: center;
@@ -91,7 +91,7 @@ nav a:hover::after {
       text-align: center;
       padding: 20px;
     }
-.intro::before { /* إنشاء عنصر وكانه قبل العنص intro */
+.intro::before , .intro-withus::before { /* إنشاء عنصر وكانه قبل العنص intro */
       content: ""; /* هذه الخاصية ضرورية عند التعامل مع pesude element  */
       position: absolute; /* موضع هذا العنصر عائد للعنصر الاب */
       top: 0; left: 0; right: 0; bottom: 0;/* سيغطي هذا العنصر كامل العنصر الأب */
@@ -237,7 +237,6 @@ nav a:hover::after {
   direction: rtl; /* لضبط الاتجاه من اليمين إلى اليسار */
   
 }
-
 .courses h2 {
   color: #37115e;  
   text-align: center;
@@ -250,7 +249,6 @@ nav a:hover::after {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));/* تكرار الاعمدة حسب عرض لبشاشة */
   gap: 20px;
   align-items: stretch; /* مهم لتساوي ارتفاع الأعمدة */
-
 }
 .content .content-edu {
  background-color: #fff;
@@ -389,7 +387,7 @@ nav a:hover::after {
 .type p{
 margin-top: 20px;
 }
-.type button {
+.type button  {
   background-color:#dbc678;
   color: black;
   font-weight: bold;
@@ -437,7 +435,7 @@ margin-top: 20px;
 .story-img:hover {
   flex: 3 1 0; /* توسع الصورة عند التمرير */
 }
-.inspiring-stories button{
+.inspiring-stories button , .volunteer-section button{
   margin-top: 20px;
   background-color:  #dbc678;
   border: none;
@@ -447,6 +445,7 @@ margin-top: 20px;
   text-align: center;
   padding: 15px 15px; /* زيادة الارتفاع عموديًا */
   height: 50px; /* أو استخدم ارتفاعًا ثابتًا */
+  border-radius: 5px;
 }
 /* نهاية تنسيق قطاع القصص */
 /* footer section */ 
@@ -577,6 +576,337 @@ hr {
   margin-right: 20px;
   margin-bottom: 12px;
 }
+
+/* --------------------------------------------------------------------*/
+/* تنسيق صفحةكن معنا withus */
+.intro-withus {
+  background-image: url('/imges/note-thanun-CYlPykF-qAM-unsplash.jpg');
+  height: 80vh;
+}
+
+/* --- تنسيق قسم التطوع العام --- */
+.volunteer-section {
+    padding: 40px 20px; /* مساحة داخلية علوية/سفلية ويمينية/يسارية */
+    max-width: 900px; /* عرض أقصى للمحتوى لسهولة القراءة */
+    margin: 30px auto; /* توسيط القسم في الصفحة مع هامش علوي/سفلي */
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+}
+.volunteer-section h2{
+  padding: 3px;
+  margin-bottom: 30px;
+  font-size: 2em;
+  align-items: center;
+  color: #665732;
+  font-weight: bold;
+  text-shadow: #d35656;
+}
+
+/* --- تنسيق كل دور تطوعي (البطاقة) --- */
+.volunteer-role {
+    background-color: #e9e7e7; /* خلفية بيضاء لكل بطاقة */
+    border-radius: 12px; /* حواف دائرية للبطاقة */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); /* ظل خفيف للبطاقة */
+    margin-bottom: 30px; /* مسافة بين البطاقات */
+    overflow: hidden; /* لإخفاء أي محتوى يتجاوز الحواف الدائرية */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* حركة عند المرور */
+}
+
+.volunteer-role:hover {
+    transform: translateY(-5px) scale(1.02); /* رفع البطاقة وتكبيرها قليلاً عند المرور */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12); /* ظل أعمق عند المرور */
+}
+
+/* --- تنسيق محتوى الدور التطوعي (الصورة والنص) --- */
+.role-content {
+    display: flex; /* ترتيب الصورة والنص بجانب بعضهما */
+    align-items: flex-start; /* محاذاة العناصر لبداية المحور المتقاطع */
+    padding: 25px;
+    gap: 25px; /* مسافة بين الصورة وقسم النص */
+}
+
+.role-content img {
+    width: 80px; /* عرض الصورة */
+    height: 80px; /* ارتفاع الصورة */
+    object-fit: contain; /* للحفاظ على نسبة أبعاد الصورة */
+    border-radius: 8px; /* حواف دائرية خفيفة للصورة */
+    background-color: #e9ecef; /* لون خلفية خفيف للصورة إذا كانت شفافة */
+    padding: 10px; /* مساحة داخلية حول الأيقونة */
+    flex-shrink: 0; /* لمنع الصورة من التقلص */
+    color: #D4A017;
+}
+
+.role-content > div { /* قسم النص بجانب الصورة */
+    flex-grow: 1; /* ليأخذ باقي المساحة المتاحة */
+}
+
+/* --- تنسيق العناوين والنصوص داخل البطاقة --- */
+.role-content h2 {
+    font-size: 1.8em; /* حجم عنوان الدور */
+    color: #D4A017; /* لون ذهبي/أصفر داكن للعنوان الرئيسي */
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+.role-content h5 {
+    font-size: 1.15em;
+    color: #E67E22; /* لون برتقالي مائل للصفرة للعنوان الفرعي */
+    margin-top: 0;
+    margin-bottom: 18px;
+    border-bottom: 2px solid #F5B04130; /* خط سفلي بلون متناسق */
+    padding-bottom: 6px;
+    font-weight: 500; /* خط متوسط */
+}
+
+.role-content ul {
+    list-style: none; /* إزالة نقاط القائمة الافتراضية */
+    padding-right: 0; /* إزالة الحشوة الافتراضية للقائمة (بسبب direction: rtl) */
+    margin: 0;
+}
+
+.role-content li {
+    font-size: 0.95em;
+    color: #495057; /* لون نص أغمق قليلاً */
+    margin-bottom: 12px;
+    line-height: 1.7; /* تباعد الأسطر لسهولة القراءة */
+    padding-right: 28px; /* زيادة المسافة لتجنب التداخل */
+    position: relative; /* لتموضع علامة التعداد */
+    text-align: justify;
+    
+
+}
+
+.role-content li::before {
+    content: "🔸"; /* استخدام رمز مختلف مائل للصفرة */
+    position: absolute;
+    right: 0;
+    top: 2px; /* ضبط الموقع العمودي */
+    font-size: 0.9em; /* حجم الرمز */
+    width: 20px; /* تحديد عرض ثابت للرمز */
+    text-align: center;
+    font-size: 0.9em;
+    pointer-events: none; /* منع التفاعل مع الرمز */
+
+}
+
+.role-content li strong {
+     color: #212529; /* لون أسود تقريباً للنص المهم */
+     font-weight: 600; /* خط أعرض قليلاً */
+}
+/*---------------------------------------------------*/
+/* تنسيق صفحة فورم التطوع */
+.volunteer-form-section {
+  background-color: #ebeae8; /* خلفية ناعمة صفراء */
+  padding: 40px 20px;
+  max-width: 700px;
+  margin: 50px auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  direction: rtl; /* دعم اللغة العربية */
+}
+
+.volunteer-form-section h2 {
+  text-align: center;
+  color:  #918628;
+  font-size: 2em;
+  margin-bottom: 30px;
+}
+
+.volunteer-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.form-group {
+  flex: 1 1 45%;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: bold;
+  color: #212121;
+  margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+}
+
+.form-group input[type="file"] {
+  padding: 5px;
+}
+
+.submit-btn {
+  width: 100%;
+  background-color: #dbc678;
+  color: #212121;
+  padding: 12px;
+  font-size: 1.1em;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #918628;
+}
+/* جعل التصميم متجاوب للشاشات الصغيرة */
+@media (max-width: 600px) {
+  .form-group {
+    flex: 1 1 100%;
+  }
+}
+
+/* نهاية تنسيق صفحة فورم التطوع */
+/*----------------------------------------------*/
+
+/*  تنسيق صفحة  فريق العمل team.html */
+.team {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+}
+.team h3 {
+  color:#918628 ;
+  font-weight: bold;
+  font-size: 1.8em;
+  margin-bottom: 20px;
+}
+.team .team-member {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px 24px; /* 20px عمودي + 24px أفقي */
+  
+}
+.team-member .member {
+  background-color: #f5f1e9;
+  border-radius: 12px;
+  padding: 12px;
+  width: 100%;
+  max-width: 250px; /* زيادة الحد الأقصى للعرض */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.07);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+/* حركة عند مرور الفأرة */
+.team-member .member:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+.member-img  {
+  height: 120px; /* زيادة ارتفاع الحاوية */
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+.member-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; 
+  display: block;
+  border-radius: 8px;
+  transition: transform 0.4s ease;
+}
+.member:hover .member-img img {
+  transform: scale(1.05);
+}
+.member h4{
+  color:#918628;
+  font-size: 13px;
+  font-weight: bold;
+  text-align: center;
+  margin: 6px 0 4px;
+}
+.member h3{
+  font-size: 15px;
+  text-align: center;
+  color: #666;
+  margin: 4px;
+}
+
+/*  تنسيق صفحة  فريق العمل نهايةteam.html */
+
+
+/* --- التجاوب مع الشاشات المختلفة --- */
+@media (max-width: 768px) {
+    .role-content {
+        flex-direction: column; /* ترتيب الصورة والنص فوق بعضهما */
+        align-items: center; /* توسيط العناصر */
+        text-align: center; /* توسيط النص */
+    }
+
+    .role-content img {
+        margin-bottom: 20px; /* مسافة أسفل الصورة */
+        width: 70px;
+        height: 70px;
+    }
+
+    .role-content h2 {
+        font-size: 1.6em;
+    }
+
+    .role-content h5 {
+        font-size: 1em;
+    }
+
+    .role-content li {
+    padding-right: 36px; /* زيادة المساحة يميناً */
+  }
+
+  .role-content li::before {
+    top: 6px; /* ضبط ارتفاع الرمز قليلاً */
+    width: 24px; /* توسيع العرض لمنع التداخل */
+  }
+}
+
+@media (max-width: 480px) {
+    .volunteer-section {
+        padding: 30px 15px;
+    }
+    .volunteer-section h2{
+        font-size: 14px;}
+
+    .role-content {
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .role-content h2 {
+        font-size: 1.4em;
+    }
+
+    .role-content li {
+        font-size: 0.9em;
+    }
+    .role-content li::before {
+    content: "🔸"; /* استخدام رمز مختلف مائل للصفرة */
+    position: absolute;
+    right: 0;
+    top: 2px; /* ضبط الموقع العمودي */
+    font-size: 0.9em; /* حجم الرمز */
+    width: 20px; /* تحديد عرض ثابت للرمز */
+    pointer-events: none; /* منع التفاعل مع الرمز */
+
+}
+}
+
 /*  تغيير لون الخط بشكل مستمر في جملة انطلاقة مبادرة نور العلم */
 @keyframes colorChange {
     0% {
