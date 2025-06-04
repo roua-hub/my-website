@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://kit.fontawesome.com/b9173cc486.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/master.css?v=3">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--ميتا التجاوب مع الاجهزة-->
+    <title> تبرع لمبادرتنا</title>
+</head>
+<body>
+    <!-- header-->
+    <div id="header"></div>
+    <!-- قسم التبرعات-->
+    <section class="container">
+        <div class="sub-1">
+            <h1>نسعى لتقديم تعليم مجاني ومستدام لطلابنا السوريين</h1>
+            <p>
+                تبرع معنا وكن مساهماً في تأمين الاحتياجات الضرورية لإتمام رسالتنا التعليمية<br>
+                مساهمتك تصنع فرقاً كبيراً وتعطينا دفعاً إلى الأمام.
+            </p>
+        </div>
+
+        <div class="sub-2">
+        <!-- الحساب السوري -->
+            <div class="account">
+                <div class="account-name">التبرع عبر حسابنا المصرفي في سوريا</div>
+                <div class="account-info">
+                    <p><span>مالك الحساب: </span>محمد علي</p>
+                    <p><span>رقم الحساب: </span>1-2232-342</p>
+                    <p><span>اسم البنك: </span>البنك الإسلامي</p>
+                    <p><span>الفرع: </span>فرع دمشق</p>
+                    <p><span>العنوان: </span>سوريا - دمشق - ساحة المحافظة</p>
+                </div>
+            </div>
+        <!-- الحساب الإماراتي -->
+            <div class="account">
+                <div class="account-name">التبرع عبر حسابنا المصرفي في الإمارات</div>
+                <div class="account-info">
+                    <p><span>مالك الحساب: </span>محمد علي</p>
+                    <p><span>رقم الحساب: </span>1-2232-342</p>
+                    <p><span>اسم البنك: </span>البنك الإسلامي</p>
+                    <p><span>الفرع: </span>دبي</p>
+                    <p><span>العنوان: </span>الإمارات - دبي</p>
+                </div>
+            </div>
+        <!-- الحساب التركي -->
+            <div class="account">
+                <div class="account-name">التبرع عبر حسابنا المصرفي في تركيا</div>
+                <div class="account-info">
+                    <p><span>مالك الحساب: </span>بولات يلمدار</p>
+                    <p><span>رقم الحساب: </span>1-2232-342</p>
+                    <p><span>اسم البنك: </span>البنك الإسلامي</p>
+                    <p><span>الفرع: </span>اسطنبول</p>
+                    <p><span>العنوان: </span>تركيا - اسطنبول</p>
+                </div>
+            </div>
+        </div>
+        <div class="notice">
+            <h3>يرجى بعد التحويل إرسال صورة عن الحوالة إلى البريد الإلكتروني:</h3>
+            <a href="mailto:exampla@gmail.com">exampla@gmail.com</a>
+        </div>
+    </section>
+
+    <!-- footer-->
+    <div id="footer"></div> 
+    <script src="/js/scipt.js"></script>  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const accountNames = document.querySelectorAll('.account-name');
+        document.querySelectorAll('.account-info').forEach(i => i.classList.remove('open'));
+        document.querySelectorAll('.account-name').forEach(n => n.classList.remove('active'));
+            accountNames.forEach(name => {
+            name.addEventListener('click', () => {
+                const info = name.nextElementSibling;
+                const isOpen = info.classList.contains('open');
+                // أغلق كل الحقول الأخرى
+                // افتح هذا فقط إن لم يكن مفتوحًا بالفعل
+                if (!isOpen) {
+                    info.classList.add('open');
+                    name.classList.add('active');
+                }
+                else {
+                    info.classList.remove('open');
+                    name.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
