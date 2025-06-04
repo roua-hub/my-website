@@ -20,3 +20,6 @@ window.addEventListener("scroll", function () {
 document.getElementById("backToTop").addEventListener("click", function () {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
+document.getElementById("go-donate").addEventListener("click", function () {
+  window.open("donate.html", "_blank"); //الانتقال لصفحة تالتبرع في نافذة جديدة
+});
